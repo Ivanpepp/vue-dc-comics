@@ -36,6 +36,6 @@ export default {
 }
 #app {
  font-family: 'Gemunu Libre';
- height: 100vh;
+ 
 }
 </style>

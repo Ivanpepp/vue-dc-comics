@@ -1,5 +1,20 @@
 <template>
   <main>
+    <div class="main-jumbo ">
+      <div class="my-view">
+        <button class="btn-primary">current series</button>
+      </div>
+    </div>
+       <div class="content">
+            <div class="my-view-2">
+              <div class="banner-container">
+                  <Banner v-for="(box,index) in Boxes" :key="index" :thumb='box.thumb' :series="box.series"/>
+              </div>
+              <button class="btn-primary">load more</button>    
+                
+                
+            </div>
+      </div>
     <!-- Jumbo section -->
     <section class="jumbo-section">
       <div class="my-view">
@@ -56,10 +71,15 @@
 </template>
 
 <script>
+import Banner from './SuperBanner.vue'
+import Boxes from '../data/dc-comics.js'
+
 export default {
     name: 'Main',
+   
     data: function(){
       return{
+        Boxes,
         comics:[
           'Characters','Comics','Movies','TV','Games','Videos','News'
         ],
@@ -73,13 +93,62 @@ export default {
           'DC','MAD Magazine','DC kids','DC Universe','DC Power Visa'
         ]
       }
-    }
+    },
+         components:{
+      Banner,
+    },  
 }
 </script>
 
 <style lang="scss" scoped>
     @import '../style/variables.scss';
-
+    .my-view-2{
+        width: 1300px;
+        margin: 0 auto;
+          .banner-container{
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 40px;
+            justify-content: space-between;
+        
+    }
+    
+        
+        
+    }
+    .main-jumbo{
+      background-image: url(../assets/img/jumbotron.jpg );
+      height: 400px;
+      background-size: cover;
+     
+      .btn-primary{
+        padding: 10px 20px;
+        background-color: $primaryColor;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 380px;
+        border: none;
+      }
+    }
+    .content{
+        background-color: #1c1c1c;
+        /* height: 140px; */
+        color: white;
+        text-align: center;
+        .btn-primary{
+          padding: 5px 10px;
+          background-color: $primaryColor;
+          color: white;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 1.1rem;
+          border: none;
+          margin-bottom: 10px;
+        }
+        
+    }
     .jumbo-section{
       background-color: $primaryColor;
       padding-top: 30px;
@@ -131,8 +200,6 @@ export default {
           position: absolute;
           bottom: -20px;
           right:150px;
-        
-
         };
         ul{
           list-style: none;

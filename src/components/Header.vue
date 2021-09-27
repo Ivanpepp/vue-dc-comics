@@ -23,13 +23,9 @@
         </nav>
         <!--/ nav section -->
 
-        <!-- Bottom Header Section -->
-        <div class="content">
-            <div class="my-view">
-                <h2>---[ Content goes here ]---</h2>
-            </div>
-        </div>
-        <!--/ Bottom Header Section -->
+       
+     
+        
   </div>
 </template>
 
@@ -103,10 +99,5 @@ export default {
 
        
     }
-    .content{
-        background-color: #1c1c1c;
-        height: 140px;
-        color: white;
-        line-height: 140px;
-    }
+    
 </style>
